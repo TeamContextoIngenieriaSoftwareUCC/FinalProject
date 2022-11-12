@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const URL_DB = "mongodb+srv://root:root@cluster0.hdow3c0.mongodb.net/?retryWrites=true&w=majority";
+const USER = 'root';
+const PASS = 'root';
+const DB = 'finalProject';
+
+const URL_DB = `mongodb+srv://${USER}:${PASS}@cluster0.hdow3c0.mongodb.net/${DB}?retryWrites=true&w=majority`;
 
 async function connectToDatabase() {
     await mongoose.connect(URL_DB);
