@@ -53,6 +53,8 @@ const signUpUser = async(req, res) => {
  */
 const updateUser = async(req, res) => {
     try{
+        if(req.params.id != req.headers.id_user) throw new Error(401);
+
         const updatedUser = await User.findOneAndUpdate(req.params.id, req.body,{
             new:true
         }).catch(e => {
@@ -80,6 +82,8 @@ const updateUser = async(req, res) => {
  */
 const deleteUser = async(req, res) => {
     try{
+        if(req.params.id != req.headers.id_user) throw new Error(401);
+
         const {id: _id} = req.params;
         const {mail, password} = req.body;
         const {deletedCount} = await User.deleteOne({_id,mail, password});
@@ -88,7 +92,6 @@ const deleteUser = async(req, res) => {
             "msg": `User with email ${mail} was successfully deleted`
         });
     }catch(e){
-        console.log(e);
         return res.status(500).json({
             "msg": "Bad Request"
         });
