@@ -16,7 +16,8 @@ const userSchema = new Schema(
         lastName: String,
         teams: [{
             type: Schema.Types.ObjectId,
-            ref: 'team'
+            ref: 'Team',
+            default: ''
         }]
     },
     {
