@@ -1,6 +1,11 @@
-const Team = require('../models/Team.model');
 const User = require('../models/User.model');
 
+/**
+ * It takes the request body, creates a new user, saves the user, and returns a response.
+ * @param req - The request object.
+ * @param res - The response object.
+ * @returns The user object is being returned.
+ */
 const signInUser = async(req, res) => {
     try{
         const newUser = new User(req.body);
@@ -13,6 +18,13 @@ const signInUser = async(req, res) => {
     }
 };
 
+/**
+ * It takes a user's email and password, checks if the user exists, and if the password is correct,
+ * returns the user's id and name.
+ * @param req - request object
+ * @param res - The response object.
+ * @returns The user's id and name.
+ */
 const signUpUser = async(req, res) => {
     try{
         let fullName;
@@ -33,6 +45,12 @@ const signUpUser = async(req, res) => {
     }
 };
 
+/**
+ * It takes a user id, and updates the user with the new data
+ * @param req - The request object.
+ * @param res - The response object.
+ * @returns The updated user.
+ */
 const updateUser = async(req, res) => {
     try{
         const updatedUser = await User.findOneAndUpdate(req.params.id, req.body,{
@@ -53,6 +71,13 @@ const updateUser = async(req, res) => {
     }
 };
 
+/**
+ * It deletes a user from the database if the user's id, email and password match the ones in the
+ * database.
+ * @param req - request
+ * @param res - response object
+ * @returns a promise.
+ */
 const deleteUser = async(req, res) => {
     try{
         const {id: _id} = req.params;
