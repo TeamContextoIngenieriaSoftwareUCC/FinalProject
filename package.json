@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "clear && nodemon app.js",
-    "production": "clear && node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "clear && node app.js"
   },
   "keywords": [],
   "author": "",
