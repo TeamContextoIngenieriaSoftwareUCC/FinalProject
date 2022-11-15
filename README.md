@@ -37,7 +37,7 @@ Ya con todo listo e instalado, abrimos la consola de nuestra maquina para empeza
 Para ejecutar la aplicación en un entorno de producción puede ingresar el siguiente comando:
 
   ``` sh
-  npm run production
+  npm run start
   ```
 
 En caso de quererlo ejecutar en un entorno de desarrollo puede usar el siguiente:
