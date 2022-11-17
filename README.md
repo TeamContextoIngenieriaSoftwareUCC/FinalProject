@@ -13,7 +13,7 @@ Para poder utilizar este proyecto sin nungun problema necesitamos contar con las
   ```sh
   npm install npm@latest -g
   ```
- * Un editor de texto o IDE, ya sea [Visual Studio Code](https://code.visualstudio.com/download) o el de su preferencia
+ * Un editor de texto o IDE, ya sea [Visual Studio Code](https://code.visualstudio.com/download) o el de su preferencia para trabajar en un entorno de desarrollo.
 
 ### 🤯Instalacion
 
